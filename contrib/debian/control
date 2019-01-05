@@ -1,0 +1,51 @@
+Source: bitcoinair
+Section: utils
+Priority: optional
+Maintainer: Peerchemist <peerchemist@protonmail.ch>
+Uploaders: Peerchemist <peerchemist@protonmail.ch>
+Build-Depends: debhelper,
+ devscripts,
+ automake,
+ libtool,
+ pkg-config,
+ bash-completion,
+ libdb-dev,
+ libdb++-dev,
+ libssl-dev,
+ perl,
+ perl-modules,
+ python,
+ libboost-system1.54-dev | libboost-system-dev (>> 1.47),
+ libboost-filesystem1.54-dev | libboost-filesystem-dev (>> 1.47),
+ libboost-program-options1.54-dev | libboost-program-options-dev (>> 1.47),
+ libboost-thread1.54-dev | libboost-thread-dev (>> 1.47),
+ libboost-test1.54-dev | libboost-test-dev (>> 1.47),
+ libboost-program-options1.54-dev | libboost-program-options-dev,
+ libminiupnpc8-dev | libminiupnpc-dev,
+ qtbase5-dev,
+ qttools5-dev-tools, qttools5-dev,
+ libqrencode-dev
+Standards-Version: 3.9.5
+Homepage: https://bitcoinair.net/
+Vcs-Git: git://github.com/bitcoinair/bitcoinair.git
+Vcs-Browser: https://github.com/bitcoinair/bitcoinair
+
+Package: bitcoinaird
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - daemon
+ BitcoinAir is a crypto-currency project forked from Bitcoin with aim to achieve
+ energy-efficiency and keep as much as possible the original Bitcoin's
+ preferable properties.
+ .
+ This package provides bitcoinaird, a daemon client for the BitcoinAir network.
+
+Package: bitcoinair-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - Qt GUI
+ BitcoinAir is a crypto-currency project forked from Bitcoin with aim to achieve
+ energy-efficiency and keep as much as possible the original Bitcoin's
+ preferable properties.
+ .
+ This package provides BitcoinAir-Qt, a GUI client for BitcoinAir based on Qt.

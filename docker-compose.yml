@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  bitcoinaird:
+    image: docker.bitcoinair.in/bitcoin-air
+    ports:
+      - "23672:23672"
+      - "32761:32761"
+    deploy:
+      mode: replicated
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+        delay: 30s
+        max_attempts: 3
+        window: 120s
+    volumes:
+      - database:/home/.BitcoinAir
+      - ./bitcoinair.conf:/root/.BitcoinAir/BitcoinAir.conf
+      
+volumes:
+    database:

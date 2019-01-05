@@ -1,0 +1,10 @@
+Building Bitcoin Air
+
+
+See doc/readme-qt.rst for instructions on building BitcoinAir-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Bitcoin Air.
+
+See doc/build-*.txt for instructions on building bitcoinaird,
+the intended-for-services, no-graphical-interface, reference
+implementation of BitcoinAir.

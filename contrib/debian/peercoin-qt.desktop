@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BitcoinAir
+Comment=Core wallet for BitcoinAir P2P Cryptocurrency
+Comment[de]=Offizieller Client für die Kryptowährung BitcoinAir
+Exec=/usr/bin/bitcoinair-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoinair128.png
+MimeType=x-scheme-handler/bitcoinair;
+Categories=Application;Network;

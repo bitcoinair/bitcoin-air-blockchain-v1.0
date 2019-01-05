@@ -1,0 +1,11 @@
+usr/local/bin/bitcoinair-qt usr/bin
+share/pixmaps/bitcoinair16.png usr/share/pixmaps
+share/pixmaps/bitcoinair32.png usr/share/pixmaps
+share/pixmaps/bitcoinair128.png usr/share/pixmaps
+share/pixmaps/bitcoinair256.png usr/share/pixmaps
+share/pixmaps/bitcoinair-testnet32.png usr/share/pixmaps
+share/pixmaps/bitcoinair-testnet128.png usr/share/pixmaps
+share/pixmaps/bitcoinair-testnet256.png usr/share/pixmaps
+debian/bitcoinair-qt.desktop usr/share/applications
+debian/bitcoinair-testnet-qt.desktop usr/share/applications
+debian/bitcoinair-qt.protocol usr/share/kde4/services/
