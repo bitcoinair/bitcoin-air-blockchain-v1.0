@@ -2394,7 +2394,7 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+6"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</source>
         <translation>这是测试用的预发布版本 - 请谨慎使用 - 不要用来挖矿，或者在正式商用环境下使用</translation>
     </message>
     <message>

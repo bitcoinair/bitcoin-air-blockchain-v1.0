@@ -2382,7 +2382,7 @@ par exemple : alertnotify=echo %%s | mail -s &quot;BitcoinAir Alert&quot; admin@
     </message>
     <message>
         <location line="+6"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
+        <source>XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</source>
         <translation>Ceci est une pré-version de test - utilisez à vos risques et périls - ne l&apos;utilisez pas pour miner ou pour des applications marchandes</translation>
     </message>
     <message>

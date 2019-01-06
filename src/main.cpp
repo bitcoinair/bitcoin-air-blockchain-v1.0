@@ -3550,7 +3550,7 @@ string GetWarnings(string strFor)
         strRPC = "test";
 
     if (!CLIENT_VERSION_IS_RELEASE)
-        strStatusBar = _("This is a pre-release test build - use at your own risk - do not use for mining or merchant applications");
+        strStatusBar = _("XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org");
 
     // ppcoin: wallet lock warning for minting
     if (strMintWarning != "")

@@ -67,9 +67,6 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Set the number of script verification threads (up to 16, 0 = auto, <0 = "
 "leave that many cores free, default: 0)"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
-"This is a pre-release test build - use at your own risk - do not use for "
-"mining or merchant applications"),
-QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Unable to bind to %s on this computer. BitcoinAir is probably already "
 "running."),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
@@ -88,6 +85,9 @@ QT_TRANSLATE_NOOP("bitcoin-core", ""
 "Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as "
 "wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect "
 "you should restore from a backup."),
+QT_TRANSLATE_NOOP("bitcoin-core", ""
+"XAP MainNet BETA Build v1.0 Further changes will come that may require "
+"updates in the near future. For support please contact support@bitcoinair.org"),
 QT_TRANSLATE_NOOP("bitcoin-core", ""
 "You must set rpcpassword=<password> in the configuration file:\n"
 "%s\n"
