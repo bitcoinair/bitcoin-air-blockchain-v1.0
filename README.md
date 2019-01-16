@@ -23,6 +23,8 @@ Blockchain Information
 ###### Circulating Supply: 21,000,000 XAP
 ###### Tail Emission (Mining): 42,000,000 XAP
 ###### Pre-Mine: 2,100,000 XAP (10%) (Implemented into DAO)
+###### P2P Port: 32761
+###### RPC Port: 23672
 The Bitcoin Air Pre-Mine will be incorporated into a Decentralized People Controlled Fund once the DAO-cPoW integration has been completed.
 More information on DAO-cPoW and how it will be a revolutionary innovation to Proof-Of-Work Consensus will be released mid to late January 2019.
 
