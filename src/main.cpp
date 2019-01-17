@@ -1,5 +1,4 @@
 
-
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2018 The BitcoinAir developers
@@ -39,7 +38,7 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 uint256 hashGenesisBlock = hashGenesisBlockOfficial;
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
-static CBigNum bnInitialHashTarget(~uint256(0) >> 34);
+static CBigNum bnInitialHashTarget(~uint256(0) >> 30);
 unsigned int nStakeMinAge = STAKE_MIN_AGE;
 int nCoinbaseMaturity = COINBASE_MATURITY_XAP;
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -1128,10 +1127,18 @@ int64 GetProofOfWorkReward(int nHeight)
 
     if (nHeight <= 1){
     nSubsidy = 21000000 * COIN;
-    } else if (nHeight <= 31000){
-    nSubsidy = 0.1 * COIN;
-    } else if (nHeight <= 41000){
+    }else if (nHeight <= 500){
+    nSubsidy = 0.001 * COIN;
+    } else if (nHeight <= 1500){
+    nSubsidy = 1.25 * COIN;
+    } else if (nHeight <= 2220){
+    nSubsidy = 2.25 * COIN;
+    } else if (nHeight <= 2940){
     nSubsidy = 3.25 * COIN;
+    } else if (nHeight <= 3660){
+    nSubsidy = 4.25 * COIN;
+    } else if (nHeight <= 4380){
+    nSubsidy = 5.25 * COIN;
     }
     /*
     CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
@@ -2341,16 +2348,10 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 }
 
 
-bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerkleRoot, int64 nBlockHeight) const
+bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerkleRoot) const
 {
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
-    if(nBlockHeight == -1){
-        if(pindexBest != NULL){
-        	nBlockHeight = GetLastBlockIndex(pindexBest, false)->nHeight + 1;
-        }
-
-}
 
     // Size limits
     if (vtx.empty() || vtx.size() > MAX_BLOCK_SIZE || ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION) > MAX_BLOCK_SIZE)
@@ -2408,10 +2409,10 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
         return state.DoS(50, error("CheckBlock() : coinstake timestamp violation nTimeBlock=%" PRI64u" nTimeTx=%u", GetBlockTime(), vtx[1].nTime));
 
     // Check coinbase reward
-    if (vtx[0].GetValueOut() > (IsProofOfWork()? (GetProofOfWorkReward(pindexBest->nHeight+1) - vtx[0].GetMinFee() + MIN_TX_FEE) : 0))
+    if (vtx[0].GetValueOut() > (IsProofOfWork()? (GetProofOfWorkReward(0) - vtx[0].GetMinFee() + MIN_TX_FEE) : 0))
         return state.DoS(50, error("CheckBlock() : coinbase reward exceeded %s > %s", 
                    FormatMoney(vtx[0].GetValueOut()).c_str(),
-                   FormatMoney(IsProofOfWork()? GetProofOfWorkReward(pindexBest->nHeight+1) : 0).c_str()));
+                   FormatMoney(IsProofOfWork()? GetProofOfWorkReward(0) : 0).c_str()));
 
     // Check transactions
     BOOST_FOREACH(const CTransaction& tx, vtx)
@@ -3542,7 +3543,7 @@ string GetWarnings(string strFor)
         strRPC = "test";
 
     if (!CLIENT_VERSION_IS_RELEASE)
-        strStatusBar = _("XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org");
+        strStatusBar = _("This is the first Bitcoin Air release, if you find any issues please let us know");
 
     // ppcoin: wallet lock warning for minting
     if (strMintWarning != "")
