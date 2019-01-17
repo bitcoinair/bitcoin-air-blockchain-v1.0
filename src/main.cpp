@@ -1128,9 +1128,9 @@ int64 GetProofOfWorkReward(int nHeight)
     if (nHeight == 1){
     nSubsidy = 21000000 * COIN;
     } else if (nHeight <= 34105){
-    nSubsidy = 0.001 * COIN;
+    nSubsidy = 0.1 * COIN;
     } else if (nHeight <= 41005){
-    nSubsidy = 1.25 * COIN;
+    nSubsidy = 3.25 * COIN;
     }
     /*
     CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
