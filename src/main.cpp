@@ -1125,44 +1125,14 @@ int64 GetProofOfWorkReward(int nHeight)
 {
     int64 nSubsidy = 6.25 * COIN;
 
-    if (nHeight == 1){
-    nSubsidy = 21000000 * COIN;
-    } else if (nHeight <= 34105){
-    nSubsidy = 0.1 * COIN;
-    } else if (nHeight <= 41005){
-    nSubsidy = 3.25 * COIN;
-    }
-    /*
-    CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
-    CBigNum bnTarget;
-    bnTarget.SetCompact(nBits);
-    CBigNum bnTargetLimit = bnProofOfWorkLimit;
-    bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
+    if (nHeight == 1)
+        nSubsidy = 21000000 * COIN;
+    else if (nHeight <= 31000)
+        nSubsidy = 0.1 * COIN;
+    else if (nHeight <= 41000)
+        nSubsidy = 3.25 * COIN;
 
-    // ppcoin: subsidy is cut in half every 16x multiply of difficulty
-    // A reasonably continuous curve is used to avoid shock to market
-    // (nSubsidyLimit / nSubsidy) ** 4 == bnProofOfWorkLimit / bnTarget
-    CBigNum bnLowerBound = CENT;
-    CBigNum bnUpperBound = bnSubsidyLimit;
-    while (bnLowerBound + CENT <= bnUpperBound)
-    {
-        CBigNum bnMidValue = (bnLowerBound + bnUpperBound) / 2;
-        if (fDebug && GetBoolArg("-printcreation"))
-            printf("GetProofOfWorkReward() : lower=%" PRI64d" upper=%" PRI64d" mid=%" PRI64d"\n", bnLowerBound.getuint64(), bnUpperBound.getuint64(), bnMidValue.getuint64());
-        if (bnMidValue * bnMidValue * bnMidValue * bnMidValue * bnTargetLimit > bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnTarget)
-            bnUpperBound = bnMidValue;
-        else
-            bnLowerBound = bnMidValue;
-    }
-
-    int64 nSubsidy = bnUpperBound.getuint64();
-    nSubsidy = (nSubsidy / CENT) * CENT;
-    if (fDebug && GetBoolArg("-printcreation"))
-        printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%" PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
-
-    return min(nSubsidy, MAX_MINT_PROOF_OF_WORK);
-*/
-return nSubsidy;
+    return nSubsidy;
 }
 
 // ppcoin: miner's coin stake is rewarded based on coin age spent (coin-days)
@@ -2342,12 +2312,16 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 
 bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerkleRoot, int64 nHeight) const
 {
-    if(nHeight == -1){
-        if(pindexBest != NULL){
-                nHeight = GetLastBlockIndex(pindexBest, false)->nHeight + 1;
-        }
-
-}
+    if (nHeight == -1) {
+        if (GetBlockTime() == 1546629098)
+            nHeight=1;
+        else if (GetBlockTime() < 1546944024)
+            nHeight=31000;
+        else if (GetBlockTime() < 1547364103)
+            nHeight=41000;
+        else
+            nHeight=41001;
+    }
 
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
