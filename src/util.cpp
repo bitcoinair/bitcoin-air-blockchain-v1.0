@@ -1083,13 +1083,13 @@ boost::filesystem::path GetDefaultDataDir()
 boost::filesystem::path GetOldDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\XAPoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\XAPoin
-    // Mac: ~/Library/Application Support/XAPoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\XBAoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\XBAoin
+    // Mac: ~/Library/Application Support/XBAoin
     // Unix: ~/.ppcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "XAPoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "XBAoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1101,7 +1101,7 @@ boost::filesystem::path GetOldDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "XAPoin";
+    return pathRet / "XBAoin";
 #else
     // Unix
     return pathRet / ".ppcoin";

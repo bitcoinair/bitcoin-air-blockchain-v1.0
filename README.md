@@ -1,4 +1,4 @@
-Bitcoin Air (XAP) Official Development Repository 
+Bitcoin Air (XBA) Official Development Repository 
 ==================================
 
 Bitcoin Air is a Hybrid PoS/PoW Peercoin Revision built upon the Peercoin Blockchain to produce a eco-friendly,
@@ -10,19 +10,19 @@ To read more about Peercoin, please go to https://www.peercoin.net/
 
 Blockchain Information
 ==================================
-###### Ticker: XAP 
+###### Ticker: XBA 
 ###### Block Time: 2 Minutes
 ###### Block Size: 16MB
-###### Block Reward: 6.25 XAP
+###### Block Reward: 6.25 XBA
 ###### Block Halving: 6 years (1,576,800 block)
 ###### Consensus: Hybrid POW/POS 
 ###### Mining Algorithm: SHA-256 
 ###### Stake Reward: 1%
 ###### Stage Age: 30 Days
 ###### Full Maturity: 90 Days
-###### Circulating Supply: 21,000,000 XAP
-###### Tail Emission (Mining): 42,000,000 XAP
-###### Pre-Mine: 2,100,000 XAP (10%) (Implemented into DAO)
+###### Circulating Supply: 21,000,000 XBA
+###### Tail Emission (Mining): 42,000,000 XBA
+###### Pre-Mine: 2,100,000 XBA (10%) (Implemented into DAO)
 ###### P2P Port: 32761
 ###### RPC Port: 23672
 The Bitcoin Air Pre-Mine will be incorporated into a Decentralized People Controlled Fund once the DAO-cPoW integration has been completed.

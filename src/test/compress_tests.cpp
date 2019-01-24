@@ -38,7 +38,7 @@ BOOST_AUTO_TEST_CASE(compress_amounts)
 {
     BOOST_CHECK(TestPair(            0,       0x0));
     BOOST_CHECK(TestPair(            1,       0x1));
-    // ppcoin: XAP CENT * 100 = BTC CENT
+    // ppcoin: XBA CENT * 100 = BTC CENT
     BOOST_CHECK(TestPair(         CENT*100,       0x7));
     BOOST_CHECK(TestPair(         COIN*100,       0x9));
     BOOST_CHECK(TestPair(      50*COIN*100,      0x32));

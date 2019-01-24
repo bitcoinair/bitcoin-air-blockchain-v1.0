@@ -15,7 +15,7 @@
 #include <string>
 #include "uint256.h"
 
-#define XAPOIN_PORT  32761
+#define XBAOIN_PORT  32761
 #define RPC_PORT     23672
 #define TESTNET_PORT 9903
 #define TESTNET_RPC_PORT 9904
@@ -27,7 +27,7 @@ void GetMessageStart(unsigned char pchMessageStart[], bool fPersistent = false);
 
 static inline unsigned short GetDefaultPort(const bool testnet = fTestNet)
 {
-    return testnet ? TESTNET_PORT : XAPOIN_PORT;
+    return testnet ? TESTNET_PORT : XBAOIN_PORT;
 }
 
 

@@ -37,7 +37,7 @@
 #elif defined(__ARMEL__)
 #define ARCH_CPU_ARM_FAMILY 1
 #elif defined(__ppc__) || defined(__powerpc__) || defined(__powerpc64__)
-#define ARCH_CPU_XAP_FAMILY 1
+#define ARCH_CPU_XBA_FAMILY 1
 #endif
 
 namespace leveldb {
@@ -93,8 +93,8 @@ inline void MemoryBarrier() {
 }
 #define LEVELDB_HAVE_MEMORY_BARRIER
 
-// XAP
-#elif defined(ARCH_CPU_XAP_FAMILY) && defined(__GNUC__)
+// XBA
+#elif defined(ARCH_CPU_XBA_FAMILY) && defined(__GNUC__)
 inline void MemoryBarrier() {
   // TODO for some powerpc expert: is there a cheaper suitable variant?
   // Perhaps by having separate barriers for acquire and release ops.
@@ -216,7 +216,7 @@ class AtomicPointer {
 #undef LEVELDB_HAVE_MEMORY_BARRIER
 #undef ARCH_CPU_X86_FAMILY
 #undef ARCH_CPU_ARM_FAMILY
-#undef ARCH_CPU_XAP_FAMILY
+#undef ARCH_CPU_XBA_FAMILY
 
 }  // namespace port
 }  // namespace leveldb

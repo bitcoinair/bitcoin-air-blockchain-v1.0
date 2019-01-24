@@ -9,9 +9,9 @@
 //
 
 // These need to be macros, as version.cpp's and bitcoin-qt.rc's voodoo requires it
-#define CLIENT_VERSION_MAJOR       1
-#define CLIENT_VERSION_MINOR       0
-#define CLIENT_VERSION_REVISION    0
+#define CLIENT_VERSION_MAJOR       0
+#define CLIENT_VERSION_MINOR       2
+#define CLIENT_VERSION_REVISION    1
 #define CLIENT_VERSION_BUILD       0
 
 // Set to true for release, false for prerelease or test build
@@ -20,9 +20,9 @@
 #endif //HAVE_CONFIG_H
 
 // ppcoin version - intended for display purpose ONLY
-#define BITCOINAIR_VERSION_MAJOR       1
-#define BITCOINAIR_VERSION_MINOR       0
-#define BITCOINAIR_VERSION_REVISION    0
+#define BITCOINAIR_VERSION_MAJOR       0
+#define BITCOINAIR_VERSION_MINOR       2
+#define BITCOINAIR_VERSION_REVISION    1
 #define BITCOINAIR_VERSION_BUILD       0
 
 // Copyright year (2009-this)

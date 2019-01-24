@@ -819,7 +819,7 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 XAP fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 XBA fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2383,7 +2383,7 @@ rpcpassword=%s
     </message>
     <message>
         <location line="+6"/>
-        <source>XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</source>
+        <source>XBA MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</source>
         <translation>Это пре-релизная тестовая сборка - используйте на свой страх и риск - не используйте для добычи или торговых приложений</translation>
     </message>
     <message>

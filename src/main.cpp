@@ -40,7 +40,7 @@ uint256 hashGenesisBlock = hashGenesisBlockOfficial;
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
 static CBigNum bnInitialHashTarget(~uint256(0) >> 34);
 unsigned int nStakeMinAge = STAKE_MIN_AGE;
-int nCoinbaseMaturity = COINBASE_MATURITY_XAP;
+int nCoinbaseMaturity = COINBASE_MATURITY_XBA;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 uint256 nBestChainTrust = 0;
@@ -3293,7 +3293,7 @@ bool InitBlockIndex() {
                        block.GetHash().ToString().c_str());
             block.nNonce++;
         }
-        printf("XAP Found Genesis Block:\n");
+        printf("XBA Found Genesis Block:\n");
         printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
         printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
         block.print();
@@ -3307,7 +3307,7 @@ bool InitBlockIndex() {
         assert(block.hashMerkleRoot == uint256("0xb38539a218f59da36e2a2255f84fca7d513c003d081e990f7c885bd884c35b7f"));
         block.print();
         assert(hash == hashGenesisBlock);
-        // XAP: check genesis block
+        // XBA: check genesis block
         {
             CValidationState state;
             assert(block.CheckBlock(state));

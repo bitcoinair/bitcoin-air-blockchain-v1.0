@@ -31,7 +31,7 @@ Notes
 See `doc/readme-qt.rst` for instructions on building BitcoinAir-Qt, the
 graphical user interface.
 
-Tested on OS X 10.5 through 10.8 on Intel processors only. XAP is not
+Tested on OS X 10.5 through 10.8 on Intel processors only. XBA is not
 supported because it is big-endian.
 
 All of the commands should be executed in a Terminal application. The

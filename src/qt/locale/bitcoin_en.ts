@@ -2982,8 +2982,8 @@ for example: alertnotify=echo %%s | mail -s &quot;BitcoinAir Alert&quot; admin@f
     </message>
     <message>
         <location line="+3"/>
-        <source>XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</source>
-        <translation type="unfinished">XAP MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</translation>
+        <source>XBA MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</source>
+        <translation type="unfinished">XBA MainNet BETA Build v1.0 Further changes will come that may require updates in the near future. For support please contact support@bitcoinair.org</translation>
     </message>
     <message>
         <location line="+3"/>

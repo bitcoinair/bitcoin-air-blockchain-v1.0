@@ -66,7 +66,7 @@ static const int64 MIN_RELAY_TX_FEE = CENT;
 static const int64 MAX_MINT_PROOF_OF_WORK = 6.25 * COIN;
 static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
-static const int COINBASE_MATURITY_XAP = 500;
+static const int COINBASE_MATURITY_XBA = 500;
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const int STAKE_TARGET_SPACING = 2 * 60; // 10-minute block spacing 
 static const int STAKE_MIN_AGE = 60 * 60 * 24 * 30; // minimum age for coin age

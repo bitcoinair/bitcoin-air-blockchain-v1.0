@@ -370,10 +370,10 @@ void AddressBookPage::on_showQRCode_clicked()
         QString address = index.data().toString();
         QString label = index.sibling(index.row(), 0).data(Qt::EditRole).toString();
 
-        //QRCodeDialog *dialog = new QRCodeDialog(address, label, tab == ReceivingTab, this);
-        //dialog->setModel(optionsModel);
-        //dialog->setAttribute(Qt::WA_DeleteOnClose);
-        //dialog->show();
+        QRCodeDialog *dialog = new QRCodeDialog(address, label, tab == ReceivingTab, this);
+        dialog->setModel(optionsModel);
+        dialog->setAttribute(Qt::WA_DeleteOnClose);
+        dialog->show();
     }
 #endif
 }

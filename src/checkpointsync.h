@@ -1,8 +1,8 @@
 // Copyright (c) 2012-2018 The BitcoinAir developers
 // Distributed under conditional MIT/X11 open source software license
 // see the accompanying file COPYING
-#ifndef XAPOIN_CHECKPOINTSYNC_H
-#define  XAPOIN_CHECKPOINTSYNC_H
+#ifndef XBAOIN_CHECKPOINTSYNC_H
+#define  XBAOIN_CHECKPOINTSYNC_H
 
 #include "net.h"
 #include "util.h"
