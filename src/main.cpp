@@ -3280,7 +3280,7 @@ bool InitBlockIndex() {
         if (fTestNet)
         {
             block.nTime    = 1545089295;
-            block.nNonce   = 1668558;
+            block.nNonce   = 168370427;
         }
 
 //#ifdef TESTING
