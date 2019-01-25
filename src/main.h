@@ -16,7 +16,7 @@
 #include "script.h"
 
 #include <list>
-
+class CBlockHeader;
 class CWallet;
 class CBlock;
 class CBlockIndex;
@@ -191,6 +191,10 @@ CBlockTemplate* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool f
 void IncrementExtraNonce(CBlock* pblock, CBlockIndex* pindexPrev, unsigned int& nExtraNonce);
 /** Do mining precalculation */
 void FormatHashBuffers(CBlock* pblock, char* pmidstate, char* pdata, char* phash1);
+/** DGW Get next POW block*/
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock);
+/** DGW Check mined block*/
+bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev);
 /** Check mined block */
 bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey);
 /** Check whether a block hash satisfies the proof-of-work requirement specified by nBits */
