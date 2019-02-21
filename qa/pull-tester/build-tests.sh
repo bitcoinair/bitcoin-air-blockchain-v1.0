@@ -17,7 +17,7 @@ fi
 
 DISTDIR=bitcoinair-0.8.6
 
-cd /home/william/Desktop/raw/bitcoinair
+cd /media/root/Data1/Projects/qt/bitcoin-air-blockchain-v1.0
 make distdir
 mv $DISTDIR linux-build
 cd linux-build
@@ -26,7 +26,7 @@ make -j$JOBS
 make check
 
 #Test code coverage
-cd /home/william/Desktop/raw/bitcoinair
+cd /media/root/Data1/Projects/qt/bitcoin-air-blockchain-v1.0
 make distdir
 mv $DISTDIR linux-coverage-build
 cd linux-coverage-build
@@ -36,7 +36,7 @@ make cov
 
 # win32 build disabled until pull-tester has updated dependencies
 ##Test win32 build
-#cd /home/william/Desktop/raw/bitcoinair
+#cd /media/root/Data1/Projects/qt/bitcoin-air-blockchain-v1.0
 #make distdir
 #mv $DISTDIR win32-build
 #cd win32-build

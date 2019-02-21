@@ -96,7 +96,7 @@
 /* #undef HAVE_LIBMINGWTHRD */
 
 /* Define to 1 if you have the `miniupnpc' library (-lminiupnpc). */
-/* #undef HAVE_LIBMINIUPNPC */
+#define HAVE_LIBMINIUPNPC 1
 
 /* Define to 1 if you have the `mswsock' library (-lmswsock). */
 /* #undef HAVE_LIBMSWSOCK */
@@ -238,7 +238,7 @@
 #define USE_QRCODE 1
 
 /* Define to 1 for upnp runtime support */
-/* #undef USE_UPNP */
+#define USE_UPNP 0
 
 /* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
    significant byte first (like Motorola and SPARC, unlike Intel). */

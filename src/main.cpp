@@ -4852,7 +4852,9 @@ CBlockTemplate* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool f
 
     if (fProofOfStake)  // attemp to find a coinstake
     {
-        pblock->nBits = GetNextTargetRequired(pindexPrev, true);
+//        pblock->nBits = GetNextTargetRequired(pindexPrev, true);
+        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
+
         CTransaction txCoinStake;
         int64 nSearchTime = txCoinStake.nTime; // search to current time
         if (nSearchTime > nLastCoinStakeSearchTime)
@@ -4872,7 +4874,7 @@ CBlockTemplate* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool f
         }
     }
 
-    //pblock->nBits = GetNextTargetRequired(pindexPrev, pblock->IsProofOfStake());
+//    pblock->nBits = GetNextTargetRequired(pindexPrev, pblock->IsProofOfStake());
     pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
 
     // Collect memory pool transactions into the block
@@ -5193,7 +5195,7 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock) {
-    /* current difficulty formula, darkcoin - DarkGravity v3, written by Evan Duffield - evan@darkcoin.io */
+    /* current difficulty formula, BitcoinAir - DarkGravity v3, written by Evan Duffield - evan@darkcoin.io */
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     const CBlockHeader *BlockCreating = pblock;
@@ -5268,6 +5270,15 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // Return the new diff.
     return bnNew.GetCompact();
+}
+
+void UpdateTime(CBlockHeader* pblock, const CBlockIndex* pindexPrev)
+{
+    pblock->nTime = std::max(pindexPrev->GetMedianTimePast() + 1, GetAdjustedTime());
+
+    // Updating time can change work required on testnet:
+//    if (Params().AllowMinDifficultyBlocks())
+        pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
 }
 
 
